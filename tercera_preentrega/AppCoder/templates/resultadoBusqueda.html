@@ -1,0 +1,21 @@
+{% extends 'padre.html' %}
+{% block contenidoDinamico %}
+<h2>Resultado de busqueda</h2>
+<p>Para el numero: {{camada}}</p>
+{% if cursos %}
+
+    <ul>
+        
+        {% for curso in cursos %}
+        <li>{{curso.nombre}} - {{curso.camada}}</li>
+        {% endfor %}
+            
+
+    </ul>
+
+{% else %}
+    <p>No se encontraron cohincidencias😔</p>
+
+
+{% endif %}
+{% endblock contenidoDinamico %}

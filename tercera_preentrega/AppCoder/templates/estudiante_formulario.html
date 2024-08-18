@@ -1,0 +1,12 @@
+{% extends 'padre.html' %}
+{% block contenidoDinamico %}
+
+<form action="{% url 'EstudianteFormulario' %}" method="POST">{% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    
+    <input type="submit"></input>
+</form>
+    
+{% endblock contenidoDinamico %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
+<body>
+    
+    {% block containBody %}
+    
+    <div>
+        <h1>Sesion cerrada</h1>
+        <a href="{% url 'index' %}">Volver al Inicio</a>
+    </div>
+
+    {% endblock containBody %}
+
+</body>
+</html>

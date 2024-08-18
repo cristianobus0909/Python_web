@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block containBody %}
+<div class="modal fade show" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-modal="true" role="dialog" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Register</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Iniciar sesion</a></p>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const myModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+            backdrop: 'static'
+        });
+        myModal.show();
+    });
+</script>
+
+{% endblock containBody %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block containBody %}
+<div>
+    <h1>Checkout</h1>
+    <p>Product: {{ product.name }}</p>
+    <p>Price: {{ product.price }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <label for="quantity">Quantity:{{ product.quantity }}</label>
+        <input type="number" name="quantity" min="1" value="1">
+        <button type="submit">Buy Now</button>
+    </form>
+</div>
+
+
+    
+{% endblock containBody %}

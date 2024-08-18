@@ -1,0 +1,43 @@
+*clases
+# Ignorar archivos compilados de Python
+*.pyc
+*.pyo
+
+# Ignorar archivos log
+*.log
+
+# Ignorar archivos de traducción
+*.pot
+*.mo
+
+# Ignorar carpetas de caché de Python
+__pycache__/
+
+# Ignorar metadatos de macOS
+.DS_Store
+
+# Ignorar entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Ignorar archivos temporales de editores
+*.swp
+*~
+._*
+
+# Ignorar configuraciones de IDEs
+.idea/
+.vscode/
+
+# Ignorar archivos de construcción
+dist/
+build/
+
+# Ignorar archivos de empaquetado de Python
+*.egg-info/
+.eggs/
+
+# Ignorar la base de datos SQLite
+db.sqlite3

@@ -1,0 +1,10 @@
+{% extends 'padre.html' %}
+{% block contenidoDinamico %}
+
+    <h1>Lista de cursos</h1>
+
+    {% for curso in cursos %}
+        <li>{{curso.nombre}} - {{curso.camada}}</li>
+    {% endfor %}
+    
+{% endblock contenidoDinamico %}

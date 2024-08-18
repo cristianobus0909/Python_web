@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block containBody %}
+<div class="container mt-3">
+    <h2 class="mb-4">Editar Perfil</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_email" class="form-label">Email</label>
+            {{ form.email }}
+        </div>
+        
+        <div class="mb-3">
+            <label for="id_last_name" class="form-label">Apellido</label>
+            {{ form.last_name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_first_name" class="form-label">Nombre</label>
+            {{ form.first_name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_age" class="form-label">Edad</label>
+            {{ form.age }}
+        </div>
+        <div class="mb-3">
+            <label for="id_address" class="form-label">Domicilio</label>
+            {{ form.address }}
+        </div>
+        <div class="mb-3">
+            <label for="id_password1" class="form-label">Contraseña</label>
+            {{ form.password1 }}
+        </div>
+        <div class="mb-3">
+            <label for="id_password2" class="form-label">Repetir Contraseña</label>
+            {{ form.password2 }}
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()">
+            <label class="form-check-label" for="showPassword">
+                <i id="passwordIcon" class="fa fa-eye"></i> Mostrar Contraseña
+            </label>
+        </div>
+        <div class="mb-3">
+            <label for="id_url" class="form-label">Imagen</label>
+            {{ avatar_form.imagen }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+</div>
+
+<script>
+    function togglePasswordVisibility() {
+        const passwordFields = document.querySelectorAll('.password-input');
+        const icon = document.getElementById('passwordIcon');
+        passwordFields.forEach(field => {
+            if (field.type === 'password') {
+                field.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                field.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    }
+</script>
+{% endblock containBody %}
+    

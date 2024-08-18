@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+{% block contenidoDinamico %}
+
+
+{% if estudiantes %}
+    <h1>Lista de Estudiantes</h1>
+    {% for estudiante in estudiantes %}
+        <li>{{estudiante.nombre}} - {{estudiante.apellido}}</li>
+    {% endfor %}
+
+{% else %}
+    <p>sin resultados encontrados</p>
+{% endif %}
+    
+
+
+{% endblock contenidoDinamico %}
